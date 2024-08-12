@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "home-services-application",
+    "slug": "home-services-application",
+    "version": "1.0.0",
+    "extra": {
+      "eas": {
+        "projectId": "6794e44a-e050-4295-b19e-ed07c15aafeb"
+      }
+    },
+    "plugins": [
+      "expo-secure-store"
+    ]
+  },
+  "name": "home-services-application"
+}
