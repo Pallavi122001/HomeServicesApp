@@ -11,36 +11,27 @@ export default function TapNavigation() {
     <Tab.Navigator screenOptions={{
       headerShown: false,
       tabBarActiveTintColor: '#501594',
-
+      tabBarShowLabel:false
     }}>
       <Tab.Screen name='home_nav' component={HomeNavigation}
 
         options={{
-          tabBarLabel: ({ color }) => (
-            <Text style={{ color: color, fontSize: 12, marginTop: -7 }}>Home</Text>
-          ),
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="home" size={36} color={color} />
+            <FontAwesome name="home" size={25} color={color} />
           )
         }}
       />
       <Tab.Screen name='booking' component={Bookingscreen}
         options={{
-          tabBarLabel: ({ color }) => (
-            <Text style={{ color: color, fontSize: 12, marginTop: -7 }}>Booking</Text>
-          ),
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="bookmark" size={36} color={color} />
+            <FontAwesome name="bookmark" size={25} color={color} />
           ),
 
         }} />
       <Tab.Screen name='profile' component={ProfileScreen}
         options={{
-          tabBarLabel: ({ color }) => (
-            <Text style={{ color: color, fontSize: 12, marginTop: -7 }}>Profile</Text>
-          ),
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="user-circle" size={36} color={color} />
+            <FontAwesome name="user-circle" size={25} color={color} />
           )
         }} />
     </Tab.Navigator>

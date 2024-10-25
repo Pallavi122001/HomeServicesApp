@@ -106,7 +106,7 @@ const GetUserBookingDetails = async (userEmail) => {
   query GetUserBooking {
     bookings(
       orderBy: updatedAt_DESC
-      where: {userEmail: "`+userEmail+`"}
+      where: {userEmail:"pallavipatel782@gmail.com"}
     ) {
       bookingStatus
       time
@@ -114,7 +114,7 @@ const GetUserBookingDetails = async (userEmail) => {
       userName
       date
       id
-      business_List {
+      businessList {
         id
         images {
           url
@@ -127,7 +127,6 @@ const GetUserBookingDetails = async (userEmail) => {
       }
     }
   }
-  
   `;
 
   const result = await request(Master_Url, query);

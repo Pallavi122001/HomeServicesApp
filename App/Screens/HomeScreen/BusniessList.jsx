@@ -1,4 +1,4 @@
-import { View, Text, FlatList, StyleSheet, Image } from 'react-native'
+import { View,FlatList} from 'react-native'
 import React from 'react'
 import { useEffect, useState } from 'react';
 import Headings from '../../Components/Headings'
@@ -15,7 +15,7 @@ export default function BusniessList() {
         })
     }
     return (
-        <View style={{ padding: 2 }}>
+        <View>
             <Headings text={'Latest Business'} isViewAll={true} />
             <FlatList
                 horizontal={true}
