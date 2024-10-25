@@ -2,7 +2,7 @@ import { request, gql } from 'graphql-request'
 const Master_Url = 'https://api-ap-south-1.hygraph.com/v2/clsu7hq1a06cl07w2pbqxvvat/master';
 
 const getSlider = async () => {
-  const query = gql`
+    const query = gql`
     query GetSlider {
         sliders {
           id
@@ -14,11 +14,11 @@ const getSlider = async () => {
       }
       
     `
-  const result = await request(Master_Url, query);
-  return result;
+    const result = await request(Master_Url, query);
+    return result;
 }
 const GetCategories = async () => {
-  const query = gql`
+    const query = gql`
     query GetCategory {
       categories {
         id
@@ -29,11 +29,11 @@ const GetCategories = async () => {
       }
     }
     `
-  const result = await request(Master_Url, query);
-  return result;
+    const result = await request(Master_Url, query);
+    return result;
 }
 const GetBusinessList = async () => {
-  const query = gql`
+    const query = gql`
     query GetBusniessList {
       business_List {
         about
@@ -50,13 +50,13 @@ const GetBusinessList = async () => {
       }
     }    
     `
-  const result = await request(Master_Url, query);
-  return result;
+    const result = await request(Master_Url, query);
+    return result;
 }
 const GetBusinessListByCategory = async (category) => {
   const query = gql`
   query GetBusniessList {
-    business_List(where: {category: {name: "`+ category + `"}}) {
+    business_List(where: {category: {name: "`+category+`"}}) {
       about
       id
       name
@@ -76,18 +76,18 @@ const GetBusinessListByCategory = async (category) => {
   const result = await request(Master_Url, query);
   return result;
 };
-const CreateBooking = async (data) => {
+const CreateBooking = async(data) => {
   const mutationQuery = gql`
   mutation CreateBooking {
     createBooking(
       data: {
         bookingStatus: Booked, 
-        businessList: {connect: {id: "`+ data.businessId + `"}
+        businessList: {connect: {id: "`+data.businessId+`"}
         }, 
-        date: "`+ data.date + `", 
-        time: "`+ data.time + `",
-        userEmail: "`+ data.userEmail + `",
-        userName: "`+ data.userName + `"
+        date: "`+data.date+`", 
+        time: "`+data.time+`",
+        userEmail: "`+data.userEmail+`",
+        userName: "`+data.userName+`"
       }
     ) {
       id
@@ -97,7 +97,7 @@ const CreateBooking = async (data) => {
     }
   }
   `
-  const result = await request(Master_Url, mutationQuery);
+  const result = await request(Master_Url,mutationQuery);
   return result;
 }
 
@@ -106,7 +106,7 @@ const GetUserBookingDetails = async (userEmail) => {
   query GetUserBooking {
     bookings(
       orderBy: updatedAt_DESC
-      where: {userEmail: "`+ userEmail + `"}
+      where: {userEmail: "`+userEmail+`"}
     ) {
       bookingStatus
       time
@@ -135,10 +135,10 @@ const GetUserBookingDetails = async (userEmail) => {
 };
 
 export default {
-  getSlider,
-  GetCategories,
-  GetBusinessList,
-  GetBusinessListByCategory,
-  CreateBooking,
-  GetUserBookingDetails
+    getSlider, 
+    GetCategories,
+    GetBusinessList,
+     GetBusinessListByCategory,
+     CreateBooking ,
+     GetUserBookingDetails
 }
